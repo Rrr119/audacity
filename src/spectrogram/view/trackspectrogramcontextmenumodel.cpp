@@ -82,6 +82,13 @@ void TrackSpectrogramContextMenuModel::load()
         items.push_back(item);
     }
 
+    if (auto item = makeSpectralEffectItem(SpectralEffectId::SpectralRepair)) {
+        if (!items.empty()) {
+            items.push_back(makeSeparator());
+        }
+        items.push_back(item);
+    }
+
     if (!items.empty()) {
         items.push_back(makeSeparator());
     }

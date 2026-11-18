@@ -108,6 +108,7 @@ enum class SpectralEffectId {
     DeleteCenterFrequency,
     AmplifySelection,
     AmplifyCenterFrequency,
+    SpectralRepair,
 };
 
 struct SpectralEffect {

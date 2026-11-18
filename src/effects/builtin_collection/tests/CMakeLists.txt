@@ -7,6 +7,7 @@ set(MODULE_TEST effects_builtin_tests)
 set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
     ${CMAKE_CURRENT_LIST_DIR}/DynamicRangeProcessorHistory_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/SpectralRepairTests.cpp
     )
 
 set(MODULE_TEST_LINK

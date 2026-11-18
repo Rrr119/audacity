@@ -70,6 +70,8 @@
 #include "reverse/reverseeffect.h"
 #include "removedcoffset/removedcoffseteffect.h"
 #include "repair/repaireffect.h"
+#include "spectralrepair/spectralrepaireffect.h"
+#include "spectralrepair/spectralrepairviewmodel.h"
 #include "truncatesilence/truncatesilenceeffect.h"
 #include "truncatesilence/truncatesilenceviewmodel.h"
 #if USE_SOUNDTOUCH
@@ -85,6 +87,7 @@ void BuiltinCollectionLoader::preInit()
     static BuiltinEffectsModule::Registration< FadeOutEffect > regFadeOut;
     static BuiltinEffectsModule::Registration< InvertEffect > regInvert;
     static BuiltinEffectsModule::Registration< Repair > regRepair;
+    static BuiltinEffectsModule::Registration< SpectralRepairEffect > regSpectralRepair;
     static BuiltinEffectsModule::Registration< ReverseEffect > regReverse;
     static BuiltinEffectsModule::Registration< TruncateSilenceEffect > regTruncateSilence;
 #if USE_SOUNDTOUCH
@@ -177,6 +180,19 @@ void BuiltinCollectionLoader::init()
 
     REGISTER_AUDACITY_EFFECTS_SINGLETON_TYPE(NoiseReductionViewModelFactory);
     regView(NoiseReductionEffect::Symbol, u"qrc:/noisereduction/NoiseReductionView.qml");
+
+    REGISTER_AUDACITY_EFFECTS_SINGLETON_TYPE(SpectralRepairViewModelFactory);
+    regView(SpectralRepairEffect::Symbol, u"qrc:/spectralrepair/SpectralRepairView.qml");
+
+    // Expose the effect to the spectrogram box-selection context menu.
+    if (spectralEffectsRegister()) {
+        spectrogram::SpectralEffect spectralEffect;
+        spectralEffect.spectralEffectId = spectrogram::SpectralEffectId::SpectralRepair;
+        spectralEffect.effectId = au3::wxToString(SpectralRepairEffect::Symbol.Internal());
+        spectralEffect.title = muse::String::fromStdString(
+            SpectralRepairEffect::Symbol.Translation().ToStdString());
+        spectralEffectsRegister()->registerSpectralEffect(spectralEffect);
+    }
 
     REGISTER_AUDACITY_EFFECTS_SINGLETON_TYPE(DtmfViewModelFactory);
     regView(DtmfGenerator::Symbol, u"qrc:/dtmfgen/DtmfView.qml");

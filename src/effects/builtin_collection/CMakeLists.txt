@@ -175,6 +175,13 @@ set(MODULE_SRC
     ${CMAKE_CURRENT_LIST_DIR}/repair/repaireffect.cpp
     ${CMAKE_CURRENT_LIST_DIR}/repair/repaireffect.h
 
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepair.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepair.h
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepaireffect.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepaireffect.h
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepairviewmodel.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/spectralrepair/spectralrepairviewmodel.h
+
     ${CMAKE_CURRENT_LIST_DIR}/truncatesilence/truncatesilenceeffect.cpp
     ${CMAKE_CURRENT_LIST_DIR}/truncatesilence/truncatesilenceeffect.h
     ${CMAKE_CURRENT_LIST_DIR}/truncatesilence/truncatesilenceviewmodel.cpp

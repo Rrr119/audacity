@@ -1,0 +1,3 @@
+# Host-less test binaries produced by run_host_tests.sh
+sr_tests
+sr_tests_san

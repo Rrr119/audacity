@@ -1,0 +1,17 @@
+{
+  "root": "/home/dev/feedback/uid24898",
+  "B": "/home/dev/feedback/uid24898",
+  "sha": "cfd366e0a6488f6750b454e1d916ffdb07d2d9f0",
+  "wslDistro": "Ubuntu-26.04",
+  "source": {
+    "owner": "audacity",
+    "repo": "audacity",
+    "sha": "cfd366e0a6488f6750b454e1d916ffdb07d2d9f0"
+  },
+  "fork": {
+    "owner": "Rrr119",
+    "repo": "audacity",
+    "cloneUrl": "https://github.com/Rrr119/audacity.git"
+  },
+  "at": "2026-11-18T04:31:20.757Z"
+}
